@@ -1,0 +1,82 @@
+.user-profile {
+    margin: 5px;
+
+    .user-intro {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+            width: 60%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 1px solid $borderColor;
+        }
+
+        .intro-username {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .intro-summary {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .intro-repo, .intro-following, .intro-followers {
+            color: $userProfileDataHeader;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+
+            .count {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .user-details {
+        padding: 5px;
+
+        .detail-repo, .detail-following, .detail-followers {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and(min-width: 768px) {
+    .user-profile, .user-details {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .user-intro {
+        width: 28%;
+    }
+
+    .user-details{
+        width: 72%;
+    }
+
+    .detail-repo,.detail-following,.detail-followers {
+        margin-left: 5px;
+        width: 100%;
+    }
+
+    .intro-summary {
+        border: none;
+    }
+}
+
+@media screen and(max-width: 768px) {
+    .intro-summary {
+        border: 1px solid $userDataBorder;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        padding-bottom: 10px;
+    }
+}

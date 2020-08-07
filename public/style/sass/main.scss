@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'navBar';
+@import 'userProfile';
+@import 'InduvidualUser';
+@import 'profileSummary';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-result {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0 5px 0 ;
+    justify-content: space-around;
+}

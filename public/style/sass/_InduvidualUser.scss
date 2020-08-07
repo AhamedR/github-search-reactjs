@@ -1,0 +1,71 @@
+.user-data {
+    display: flex;
+    cursor: pointer;
+    margin: 0 5px 5px 5px;
+    text-decoration: none;
+
+    .user-avatar {
+        display: flex;
+        width: 30%;
+
+        img {
+            width: 100%;
+            border-radius: 5% 0 0 5%;
+        }
+    }
+
+    .user-card {
+        width: 70%;
+        display: flex;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-left: none;
+        flex-direction: column;
+        border-radius: 0 5% 5% 0;
+        border: 1px solid $userDataBorder;
+        border-left: none;
+
+        .username {
+            text-transform: uppercase;
+            color: $userProfileDataValue;
+            flex: 1;
+        }
+
+        .profile-data {
+            display: flex;
+            flex: none;
+            text-align: center;
+            font-size: 12px;
+            justify-content: space-evenly;
+            position: static;
+            bottom: 0;
+
+            .followers, .repos, .following {
+                color: $userProfileDataValue;
+
+                p {
+                    color: $userProfileDataHeader;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 640px) {
+    .user-data {
+        width: 32%;
+    }
+}
+
+@media screen and(max-width: 978px) {
+    .user-data {
+        width: 48%;
+    }
+}
+
+@media screen and(max-width: 768px) {
+    .user-data {
+        width: 100%;
+    }
+}
