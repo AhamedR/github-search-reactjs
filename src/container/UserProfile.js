@@ -18,7 +18,7 @@ class UserProfile extends Component {
                 </nav>
                 <div className="user-profile">
                     <div className="user-intro">
-                        <img src="/default-avatar.png" />
+                        <img alt="username" src="/default-avatar.png" />
                         <div className="intro-username">
                             @AhamedR
                         </div>

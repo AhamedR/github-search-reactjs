@@ -6,7 +6,7 @@
 
     .user-avatar {
         display: flex;
-        width: 30%;
+        width: 20%;
 
         img {
             width: 100%;
@@ -15,7 +15,7 @@
     }
 
     .user-card {
-        width: 70%;
+        width: 80%;
         display: flex;
         padding: 10px;
         font-size: 20px;
@@ -33,7 +33,7 @@
         }
 
         .profile-data {
-            display: flex;
+            display: none;
             flex: none;
             text-align: center;
             font-size: 12px;

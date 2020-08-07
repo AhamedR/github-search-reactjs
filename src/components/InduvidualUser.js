@@ -18,7 +18,10 @@ function InduvidualUser(props) {
             to={`/github-user/${userId}`}
         >
             <div className="user-avatar">
-                <img src={avatarUrl} />
+                <img
+                    alt={`${username}-avatar`}
+                    src={avatarUrl}
+                />
             </div>
             <div className="user-card">
                 <div className="username">
