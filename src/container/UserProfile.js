@@ -95,11 +95,13 @@ class UserProfile extends Component {
             }
             return Object.values(repos).map((repo) => {
                 const {
+                    id,
                     name,
                 } = repo;
 
                 return (
                     <Repository
+                        key={id}
                         name={name}
                     />
                 );
@@ -143,12 +145,14 @@ class UserProfile extends Component {
             }
             return Object.values(sortBy).map((connection) => {
                 const {
+                    id,
                     login,
                     avatar_url,
                 } = connection;
 
                 return (
                     <Connection
+                        key={id}
                         username={login}
                         avatar={avatar_url}
                     />

@@ -6,9 +6,6 @@ function InduvidualUser(props) {
         userId,
         avatarUrl,
         username,
-        following,
-        repoCount,
-        followers,
     } = props;
 
     return (
@@ -26,20 +23,6 @@ function InduvidualUser(props) {
             <div className="user-card">
                 <div className="username">
                     {username}
-                </div>
-                <div className="profile-data">
-                    <div className="followers">
-                        <p>Followers</p>
-                        {following}
-                    </div>
-                    <div className="repos">
-                        <p>Repos</p>
-                        {repoCount}
-                    </div>
-                    <div className="following">
-                        <p>Following</p>
-                        {followers}
-                    </div>
                 </div>
             </div>
         </Link>

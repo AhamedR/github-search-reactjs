@@ -60,9 +60,6 @@ class GitHubSearch extends Component {
                     userId={id}
                     avatarUrl={avatar_url}
                     username={login}
-                    following="10"
-                    repoCount="29"
-                    followers="0"
                 />
             )
         });
