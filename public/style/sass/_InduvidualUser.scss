@@ -5,8 +5,10 @@
     text-decoration: none;
 
     .user-avatar {
-        display: flex;
         width: 20%;
+        display: flex;
+        border: 1px solid $userDataBorder;
+        border-radius: 5% 0 0 5%;
 
         img {
             width: 100%;
@@ -30,24 +32,6 @@
             text-transform: uppercase;
             color: $userProfileDataValue;
             flex: 1;
-        }
-
-        .profile-data {
-            display: none;
-            flex: none;
-            text-align: center;
-            font-size: 12px;
-            justify-content: space-evenly;
-            position: static;
-            bottom: 0;
-
-            .followers, .repos, .following {
-                color: $userProfileDataValue;
-
-                p {
-                    color: $userProfileDataHeader;
-                }
-            }
         }
     }
 }
