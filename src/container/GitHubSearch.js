@@ -74,7 +74,7 @@ class GitHubSearch extends Component {
             noOfItems,
             searchKeyword,
         } = this.state;
-        console.log((request !== 'PREVIOUS' && pageNo > 1));
+
         if (searchKeyword && ((request === 'PREVIOUS' && pageNo > 1) || request === 'NEXT')) {
             pageNo = request === 'NEXT' ? ++pageNo : --pageNo;
 
@@ -116,6 +116,32 @@ class GitHubSearch extends Component {
         }
     }
 
+    renderPagination = () => {
+        return (
+            <div className="pagination">
+                <p
+                    className={
+                        this.isPaginationEnable('PREVIOUS') ?
+                            'previous' :
+                            'previous disabled'
+                    }
+                    onClick={() => this.handlePagination('PREVIOUS')}
+                >
+                    &#8678; Previous
+                </p>
+                <p
+                    className={
+                        this.isPaginationEnable('NEXT') ?
+                            'next' :
+                            'next disabled'
+                    }
+                    onClick={() => this.handlePagination('NEXT')}
+                >
+                    Next &#8680;
+                </p>
+            </div>
+        );
+    }
     render() {
         const {
             isSearching,
@@ -143,7 +169,7 @@ class GitHubSearch extends Component {
                         <Loader
                             message="Searching"
                         /> :
-                        Object.values(searchResult).length === 0 ?
+                        !searchResult || Object.values(searchResult).length === 0 ?
                             <MessageNote
                                 message="Search for a User with username"
                             /> :
@@ -160,28 +186,7 @@ class GitHubSearch extends Component {
                                     message="Sorry! No Users found for this username"
                                 />
                 }
-                <div className="pagination">
-                    <p
-                        className={
-                            this.isPaginationEnable('PREVIOUS') ?
-                                'previous' :
-                                'previous disabled'
-                        }
-                        onClick={() => this.handlePagination('PREVIOUS')}
-                    >
-                        &#8678; Previous
-                    </p>
-                    <p
-                        className={
-                            this.isPaginationEnable('NEXT') ?
-                                'next' :
-                                'next disabled'
-                        }
-                        onClick={() => this.handlePagination('NEXT')}
-                    >
-                        Next &#8680;
-                    </p>
-                </div>
+                { this.renderPagination() }
             </Fragment>
         );
     }

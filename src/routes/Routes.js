@@ -9,7 +9,7 @@ const Routes = () => {
     return(
         <Switch>
             <Route path="/" exact component={GitHubSearch} />
-            <Route path="/github-user/:useId" exact component={UserProfile} />
+            <Route path="/github-user/:username" exact component={UserProfile} />
             <Route component={PageNotFound} />
         </Switch>
     );

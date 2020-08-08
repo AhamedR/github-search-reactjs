@@ -10,13 +10,16 @@
 .connection {
     display: flex;
     padding: 5px;
+    color: inherit;
+    cursor: pointer;
     font-size: 12px;
     margin-top: 5px;
     border-radius: 5px;
     margin-bottom: 2px;
     align-items: center;
+    text-decoration: none;
     border: 1px solid $borderColor;
-
+    
     .connection-username {
         margin-left: 10px;
         text-transform: uppercase;

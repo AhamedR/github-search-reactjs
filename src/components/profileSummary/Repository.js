@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Repository() {
+function Repository(props) {
+    const {
+        name,
+    } = props;
+
     return (
         <div className="connection-repository">
-            Lorem ipsum dolor sit amet
+            { name }
         </div>
     );
 }
