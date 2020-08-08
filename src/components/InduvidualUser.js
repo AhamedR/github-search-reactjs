@@ -15,7 +15,7 @@ function InduvidualUser(props) {
         <Link
             key={userId}
             className="user-data"
-            to={`/github-user/${userId}`}
+            to={`/github-user/${username}`}
         >
             <div className="user-avatar">
                 <img
