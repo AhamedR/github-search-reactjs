@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'navBar';
+@import 'userProfile';
+@import 'InduvidualUser';
+@import 'profileSummary';
+@import 'loader';
+@import 'messageNote';
+@import 'pagination';
+@import 'pagenotFound';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.search-result {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0 8vh 0 ;
+    justify-content: space-around;
+}
+
+.search-summary {
+    margin: 10px;
+    font-size: 16px;
+}

@@ -1,0 +1,46 @@
+.loader-body {
+    top: 10vh;
+    display: flex;
+    line-height: 1.6;
+    min-height: 82vh;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        transform-origin: bottom center;
+
+        .square {
+            width: 40px;
+            height: 40px;
+            border-radius: 20%;
+            transform: scale(0);
+            display: inline-block;
+            background-color: $spinnerCircleOne;
+            animation: grow 1.5s linear infinite;
+        }
+
+        .square:nth-child(2) {
+            background-color: $spinnerCircleTwo;
+            animation-delay: 0.75s;
+        }
+
+        .square:nth-child(3) {
+            background-color: $spinnerCircleThree;
+            animation-delay: 1s;
+        }
+    }
+
+    .loader-text {
+        margin-left: 10px;
+        opacity: .8;
+    }
+}
+
+@keyframes grow {
+    50% {
+        transform: scale(1);
+    }
+}

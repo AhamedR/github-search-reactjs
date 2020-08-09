@@ -1,0 +1,86 @@
+nav {
+    top: 0;
+    display: flex;
+    min-height: 10vh;
+    position: sticky;
+    border-left: none;
+    border-left: none;
+    border-right: none;
+    border-right: none;
+    align-items: center;
+    color: $navTextColor;
+    border: 1px solid $navBorder;
+    background-color: $navBackgouround;
+
+    .logo {
+        letter-spacing: 2px;
+        font-size: 20px;
+
+        .primary {
+            font-weight: 600;
+        }
+        .secondary {
+            font-weight: 400;
+        }
+    }
+
+    .search-input {
+        display: flex;
+        width: 60%;
+
+        input {
+            padding: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            border-radius: 4px;
+            color: $navTextColor;
+            background-color: $navInputBackground;
+
+            &:focus {
+                color: $navTextOnFocusColor;
+                background-color: $navInputOnFocusBackground;
+            }
+        }
+    }
+
+    .nav-back {
+        display: inline;
+        text-decoration: none;
+        color: $navTextColor;
+        padding-left: 20px;
+        position: absolute;
+        left: 0;
+    }
+}
+
+@media screen and(max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .logo, .nav-back {
+        padding: 10px 20px 0 10px;
+    }
+
+    input {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        transition: background-color .2s;
+    }
+}
+
+@media screen and(min-width: 768px) {
+    .logo {
+        padding: 0 20px 0 10px;
+    }
+
+    input {
+        width: 40%;
+        transition: width .5s, background-color .2s;
+
+        &:focus {
+            width: 70%;
+        }
+    }
+}

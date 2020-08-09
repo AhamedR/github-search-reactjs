@@ -1,0 +1,55 @@
+.user-data {
+    display: flex;
+    cursor: pointer;
+    margin: 0 5px 5px 5px;
+    text-decoration: none;
+
+    .user-avatar {
+        width: 20%;
+        display: flex;
+        border: 1px solid $userDataBorder;
+        border-radius: 5% 0 0 5%;
+
+        img {
+            width: 100%;
+            border-radius: 5% 0 0 5%;
+        }
+    }
+
+    .user-card {
+        width: 80%;
+        display: flex;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-left: none;
+        flex-direction: column;
+        border-radius: 0 5% 5% 0;
+        border: 1px solid $userDataBorder;
+        border-left: none;
+
+        .username {
+            text-transform: uppercase;
+            color: $userProfileDataValue;
+            flex: 1;
+        }
+    }
+}
+
+@media screen and(min-width: 640px) {
+    .user-data {
+        width: 32%;
+    }
+}
+
+@media screen and(max-width: 978px) {
+    .user-data {
+        width: 48%;
+    }
+}
+
+@media screen and(max-width: 768px) {
+    .user-data {
+        width: 100%;
+    }
+}

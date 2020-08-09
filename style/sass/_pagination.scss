@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 8vh;
+    // position: sticky;
+    align-items: center;
+    color: $paginationTextColor;
+    background-color: $paginationBackgouround;
+
+    .previous,.next {
+        width: 50%;
+        cursor: pointer;
+
+        &.disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+    }
+
+    .previous {
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .next {
+        margin-left: 20px;
+    }
+}
