@@ -9,10 +9,10 @@ import { searchUser } from '../action/gitHubUserAction';
 class GitHubSearch extends Component {
     state = {
         searchKeyword: null,
-        searchResult: {},
-        isSearching: false,
-        noOfItems: 24,
-        pageNo: 1,
+        searchResult : {},
+        isSearching  : false,
+        noOfItems    : 24,
+        pageNo       : 1,
     };
 
     componentDidUpdate(prevProps) {
@@ -46,6 +46,11 @@ class GitHubSearch extends Component {
         });
     }
 
+    /**
+     * Render all users as per serach result.
+     * 
+     * @param {object} allUsers 
+     */
     renderInduvidualElement = (allUsers) => {
         return Object.values(allUsers).map((user) => {
             const {
@@ -65,6 +70,12 @@ class GitHubSearch extends Component {
         });
     }
 
+    /**
+     * handle Pagination as per the click
+     * it can be Previous or Next
+     * 
+     * @param {string} request 
+     */
     handlePagination = (request) => {
         let {
             pageNo,
@@ -72,10 +83,22 @@ class GitHubSearch extends Component {
             searchKeyword,
         } = this.state;
 
-        if (searchKeyword && ((request === 'PREVIOUS' && pageNo > 1) || request === 'NEXT')) {
+        if (
+            searchKeyword &&
+            (
+                (request === 'PREVIOUS' && pageNo > 1) ||
+                request === 'NEXT'
+            )
+        ) {
             pageNo = request === 'NEXT' ? ++pageNo : --pageNo;
 
-            this.props.dispatch(searchUser(searchKeyword, pageNo, noOfItems));
+            this.props.dispatch(
+                searchUser(
+                    searchKeyword,
+                    pageNo,
+                    noOfItems
+                )
+            );
 
             this.setState({
                 isSearching: true,
@@ -84,6 +107,11 @@ class GitHubSearch extends Component {
         }
     }
 
+    /**
+     * Check wether the button need to be enabled or disabled
+     *
+     * @param {string} request 
+     */
     isPaginationEnable = (request) => {
         const {
             searchResult,
@@ -113,6 +141,9 @@ class GitHubSearch extends Component {
         }
     }
 
+    /**
+     * Render pagination component
+     */
     renderPagination = () => {
         return (
             <div className="pagination">

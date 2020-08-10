@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import Repository from '../components/profileSummary/Repository';
 import Connection from '../components/profileSummary/Connection';
-import Loader from '../components/common/Loader';
 import MessageNote from '../components/common/MessageNote';
+import Loader from '../components/common/Loader';
 import {
     getUserDetails,
     getFollowings,
@@ -16,11 +16,11 @@ import {
 class UserProfile extends Component {
     state = {
         isRequestSent: false,
-        userDetails: null,
-        followings: null,
-        followers: null,
-        username: null,
-        repos: null,
+        userDetails  : null,
+        followings   : null,
+        followers    : null,
+        username     : null,
+        repos        : null,
     }
 
     componentDidMount() {
@@ -80,6 +80,9 @@ class UserProfile extends Component {
         });
     }
 
+    /**
+     * Render repositories
+     */
     renderRepositories = () => {
         const {
             repos,
@@ -115,6 +118,11 @@ class UserProfile extends Component {
         }
     }
 
+    /**
+     * Render Following and Followers as per connectionType
+     * 
+     * @param {string} connectionType 
+     */
     renderConnections = (connectionType) => {
         const {
             followers,
@@ -250,11 +258,10 @@ const mapStateToProps = (state) => {
 
     return {
         userDetails: state.userData.userDetails,
-        followings: state.userData.followings,
-        followers: state.userData.followers,
-        repos: state.userData.repos,
+        followings : state.userData.followings,
+        followers  : state.userData.followers,
+        repos      : state.userData.repos,
     };
 };
 
 export default connect(mapStateToProps)(UserProfile);
-

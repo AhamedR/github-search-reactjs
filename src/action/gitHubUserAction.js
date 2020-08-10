@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+/**
+ * Search for Github users as per the username provided.
+ * 
+ * @param {string} username 
+ * @param {int} pageNo 
+ * @param {int} noOfItems 
+ */
 export function searchUser(username, pageNo, noOfItems) {
     const url = `https://api.github.com/search/users?q=${username}+in:login&page=${pageNo}&per_page=${noOfItems}`;
 
@@ -15,6 +22,11 @@ export function searchUser(username, pageNo, noOfItems) {
     }
 }
 
+/**
+ * Get all details of an induvidual user
+ * 
+ * @param {string} username 
+ */
 export function getUserDetails(username) {
     const url = `https://api.github.com/users/${username}`;
 
@@ -30,6 +42,12 @@ export function getUserDetails(username) {
     }
 }
 
+/**
+ * Get Followers of the given user.
+ * as per the username
+ * 
+ * @param {string} username 
+ */
 export function getFollowers(username) {
     const url = `https://api.github.com/users/${username}/followers`;
 
@@ -45,6 +63,12 @@ export function getFollowers(username) {
     }
 }
 
+/**
+ * Get Followings of the given user.
+ * as per the username
+ * 
+ * @param {string} username 
+ */
 export function getFollowings(username) {
     const url = `https://api.github.com/users/${username}/following`;
 
@@ -60,6 +84,12 @@ export function getFollowings(username) {
     }
 }
 
+/**
+ * Get Repositories of the given user.
+ * as per the username
+ * 
+ * @param {string} username 
+ */
 export function getRepos(username) {
     const url = `https://api.github.com/users/${username}/repos`;
 
